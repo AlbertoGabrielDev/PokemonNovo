@@ -29,7 +29,8 @@ body{
   margin-left: -40px;
 }
 .habilidade{
-  display: flex;
+ 
+  display: contents;
   justify-content: space-around;
 }
 .imagem{
