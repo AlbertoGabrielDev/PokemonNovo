@@ -18,7 +18,11 @@ function Pokemons({dados}){
                                 e.abilities.map((poke,index)=>{
                                     return(
                                         <>
-                                          <p className='habilidade'> {poke.ability.name}</p>
+                                          <ol>
+                                          <li className='habilidade'>
+                                          {poke.ability.name}
+                                          </li>
+                                          </ol>
                                         </>
                                     )
                                 })

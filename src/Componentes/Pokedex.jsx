@@ -25,6 +25,7 @@ const Pokedex = () => {
         setNextUrl(res.data.next)
         setPrevUrl(res.data.previous)
         // console.log(res.data.results)
+        
     }
 
 
