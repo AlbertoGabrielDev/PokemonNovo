@@ -5,14 +5,10 @@ import Pokemons from "./Pokemons";
 const Pokedex = () => {
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
     const [pokemon, setPokemon] = useState([])
-
-    const [habilities, setHabilities] = useState("") ;
-
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
 
-    const [pokemonHabi, setpokemonHabi] = useState();
-
+    
     useEffect(() => {
         pokeFun()
        
@@ -20,7 +16,7 @@ const Pokedex = () => {
 
     const pokeFun = async () => { // poderia usar callback?
         const res = await axios.get(url)
-        setHabilities(res.data.results.abilities)
+       
         getPokemon(res.data.results)
         setNextUrl(res.data.next)
         setPrevUrl(res.data.previous)
@@ -39,7 +35,7 @@ const Pokedex = () => {
         })
 
 
-        console.log(pokemon)
+        console.log(url)
     }
 
 

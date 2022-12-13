@@ -1,10 +1,8 @@
 body{
     /* background-color: rgb(68, 48, 48); */
     background-color: #F0F0F0;
-
-    
   }
-  
+
 
 .nome{
   align-items: center;
@@ -14,37 +12,65 @@ body{
   margin-left: -40px;
 }
 .habilidade{
- 
+ margin-top: 0px;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+}
+.habilidade1{
+  
+  display: flex;
+  justify-content: flex-end;
 }
 
 
 .imagem{
-  height: 130px;
+  max-width: 100%;
+  width: 150px;
+  /* height: 100px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-left: 90px;
-  margin-top: -80px;
+  margin-top: -80px; */
 }  
 
+/* @media only screen and (max-width: 480px) {
+  .imagem {
+    width: 100%;
+  }
+} */
+
   .front{
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
     margin: 20px;
     padding: 20px;
     width: 360px;
     height: 240px;
-    display: grid; 
-     grid-template-rows: 20px 50px 1fr 50px;
     border-radius: 10px;
     box-shadow: 0px 6px 10px rgba(0, 0, 0, 0.25);
-    /* transition: all 0.2s; */
     font-family: 'Itim', cursive;
     font-family: 'JetBrains Mono', monospace;
-    /* position: absolute; */
      background-color: #ffffff; 
+     /* grid-template-rows: 20px 50px 1fr 50px; */
     }
   
     
+/*   
+    .father{
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      background-color: white;
+      
+  }
   
-  
+  .card{
+      flex: 1 1 150px;
+      margin: 5px;
+      background-color: blueviolet;
+      width: 150px;
+      height: 150px;
+  } */
