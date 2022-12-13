@@ -10,19 +10,21 @@ function Pokemons({ dados }) {
 
     return (
         <>
-            <div className="cards">
+            <div className="all">
                 {
                     dados.map((e) => {
                         return (
                             <>
                                 <div className="cards" key={e.id}>
                                     <div className="card">
-                                        {/* <p className="nome">{e.name}</p>
-                                        <p className="atributos3">{e.types[0].type.name}</p> */}
                                         <div className='imagem'>
                                         <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${e.id}.svg`} alt={e.id} />
                                         </div>
-
+                                        <div className='nome-tipo'>
+                                        <p className="nome">{e.name}</p>
+                                        <p className="atributos3">{e.types[0].type.name}</p> 
+                                         
+                                        </div>
                                         {
                                             e.abilities.forEach((poke, index) => {
                                                 if (index == 0) {

@@ -3,14 +3,6 @@ body {
   background-color: #F0F0F0;
 }
 
-/* 
-  .nome{
-    align-items: center;
-    display: flex;
-    justify-content: center;
-    margin-top: 150px;
-    margin-left: -40px;
-  }
 .habilidade{
  margin-top: 0px;
   display: flex;
@@ -19,21 +11,15 @@ body {
 .habilidade1{
   display: flex;
   justify-content: flex-end;
-} */
+} 
 
-.cards {
-  background-color: blue;
+.all {
+  /* background-color: blue; */
 }
 
-/* .imagem{
-  max-width: 100%;
-  width: 100px;
-  height: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}   */
+.cards{
+  background-color: blue;
+}
 
 .card {
   position: relative; 
@@ -52,23 +38,32 @@ body {
   background-color: #ffffff;
   /* grid-template-rows: 20px 50px 1fr 50px;  */
 }
-
-
-
 .card .imagem {
- 
   width: 100px;
-  height: 100px;
+  height: 150px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-
 .card .imagem img{
-  max-width: 55%;
-  max-height: 200px;
+  max-width: 100%;
+  
 }
-
 img{
   max-width: 100%;
 }
+
+.card .nome-tipo{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  
+}
+
+  /* .nome-tipo{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 150px;
+    margin-left: -40px;
+  }  */
