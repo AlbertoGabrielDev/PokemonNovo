@@ -8,20 +8,20 @@ const Pokedex = () => {
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
 
-    
+
     useEffect(() => {
         pokeFun()
-       
+
     }, [url])
 
     const pokeFun = async () => { // poderia usar callback?
         const res = await axios.get(url)
-       
+        // console.log(res.data.results)
+
         getPokemon(res.data.results)
         setNextUrl(res.data.next)
         setPrevUrl(res.data.previous)
-        // console.log(res.data.results)
-        
+
     }
 
 
@@ -32,12 +32,11 @@ const Pokedex = () => {
                 e = [...e, result.data]
                 return e;
             })
+            console.log(result.data.abilities)
         })
-
-
-        console.log(url)
     }
 
+    // console.log()
 
     return (
         <>
@@ -46,22 +45,22 @@ const Pokedex = () => {
                 dados={pokemon}
             />
 
-        <div className="botao_anterior">
-        {
-            <button onClick={()=>{
-                setPokemon([])
-                setUrl(prevUrl)
-            }}>Pagina Anterior</button>
-        }
-    </div>
-    <div className="botao_proximo">
-        {
-            <button onClick={()=>{
-                setPokemon([])
-                setUrl(nextUrl)
-            }}>Pagina Seguinte</button>
-        }
-        </div>
+            <div className="botao_anterior">
+                {
+                    <button onClick={() => {
+                        setPokemon([])
+                        setUrl(prevUrl)
+                    }}>Pagina Anterior</button>
+                }
+            </div>
+            <div className="botao_proximo">
+                {
+                    <button onClick={() => {
+                        setPokemon([])
+                        setUrl(nextUrl)
+                    }}>Pagina Seguinte</button>
+                }
+            </div>
 
         </>
     )

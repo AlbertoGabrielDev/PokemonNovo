@@ -1,3 +1,4 @@
+import axios from 'axios';
 import './Pokedex.css';
 
 function Pokemons({ dados }) {
@@ -6,7 +7,10 @@ function Pokemons({ dados }) {
     var h1 = "";
 
 
-
+    // const habilidade = async ()=>{
+    //     const habi = await axios.get(url)
+        
+    // }
 
     return (
         <>
@@ -18,13 +22,14 @@ function Pokemons({ dados }) {
                                 <div className="cards" key={e.id}>
                                     <div className="card">
                                         <div className='imagem'>
-                                        <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${e.id}.svg`} alt={e.id} />
+                                            <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${e.id}.svg`} alt={e.id} />
                                         </div>
-                                        <div className='nome-tipo'>
-                                        <p className="nome">{e.name}</p>
-                                        <p className="atributos3">{e.types[0].type.name}</p> 
-                                         
+
+                                        <div className='nome'>
+                                            <span className="nome">{e.name}</span>
                                         </div>
+
+                                        {/* <span className="atributos3">{e.types[0].type.name}</span> */}
                                         {
                                             e.abilities.forEach((poke, index) => {
                                                 if (index == 0) {

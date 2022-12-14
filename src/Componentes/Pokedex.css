@@ -44,6 +44,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 auto;
 }
 .card .imagem img{
   max-width: 100%;
@@ -53,11 +54,15 @@ img{
   max-width: 100%;
 }
 
-.card .nome-tipo{
+.card .nome{
   align-items: center;
   display: flex;
   justify-content: center;
-  
+   margin-bottom: 24px; 
+  width: 180px;
+  height: 30px;
+  padding: 0 2.8rem;
+    
 }
 
   /* .nome-tipo{
