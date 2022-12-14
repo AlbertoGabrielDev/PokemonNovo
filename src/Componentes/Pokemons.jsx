@@ -7,10 +7,18 @@ function Pokemons({ dados }) {
     var h0 = "";
     var h1 = "";
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/") 
+    const [habi,setHabi] = useState("")
 
-    const habilidade = async ()=>{
-        const habi = await axios.get(url)
-        
+
+    const getPokemon = async (res) => {
+        res.map(async (item) => {
+            const result = await axios.get(item.url)
+            setHabi(e => {
+                e = [...e, result.data]
+                return e;
+            })
+            console.log(result.data.abilities)
+        })
     }
 
     return (
