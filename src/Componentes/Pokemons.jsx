@@ -1,16 +1,17 @@
 import axios from 'axios';
 import './Pokedex.css';
+import {useState} from 'react';
 
 function Pokemons({ dados }) {
 
     var h0 = "";
     var h1 = "";
+    const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/") 
 
-
-    // const habilidade = async ()=>{
-    //     const habi = await axios.get(url)
+    const habilidade = async ()=>{
+        const habi = await axios.get(url)
         
-    // }
+    }
 
     return (
         <>
