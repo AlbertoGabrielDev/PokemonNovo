@@ -31,8 +31,9 @@ const Pokedex = () => {
             setPokemon(e => {
                 e = [...e, result.data]
                 return e;
+               
             })
-            console.log(result.data.abilities)
+            // console.log(result.data.abilities)
         })
     }
 
