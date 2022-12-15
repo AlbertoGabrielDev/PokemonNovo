@@ -7,31 +7,7 @@ function Pokemons({ dados }) {
 
     var h0 = "";
     var h1 = "";
-    const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
-    const [habi, setHabi] = useState("")
-
-    useEffect(() => {
-        teste()
-    }, [url])
-
-    const teste = async() =>{
-        const res = await axios.get(url)
-
-        getHabilidade(res.data.results)
-    }
-
-
-    const getHabilidade = async (res) => {
-        res.map(async (item) => {
-            const result = await axios.get(item.url)
-            setHabi(e => {
-                e = [...e, result.data]
-                return e;
-            })
-             console.log(result.data.abilities)
-        })
-    }
-
+    
     return (
         <>
             <div className="all">
