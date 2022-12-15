@@ -7,7 +7,9 @@ function Pokemons({ dados }) {
 
     var h0 = "";
     var h1 = "";
-    
+
+    var t0 = "";
+    var t1 = "";
     return (
         <>
             <div className="all">
@@ -24,8 +26,21 @@ function Pokemons({ dados }) {
                                         <div className='nome'>
                                             <span className="nome">{e.name}</span>
                                         </div>
+                                        {
+                                            e.types.forEach((poke, index) => {
+                                                if (index == 0) {
+                                                    t0 = poke.type.name;
+                                                } if (index == 1) {
+                                                    t1 = poke.type.name
+                                                }
+                                            })
+                                        }
 
-                                        {/* <span className="atributos3">{e.types[0].type.name}</span> */}
+                                        <div className='tipo'>
+                                        <p className='tipo0'>{t0}</p>
+                                        <p className='tipo1'>{t1}</p>
+                                        </div>
+
                                         {
                                             e.abilities.forEach((poke, index) => {
                                                 if (index == 0) {

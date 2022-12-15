@@ -58,12 +58,32 @@ img{
   align-items: center;
   display: flex;
   justify-content: center;
-   margin-bottom: 24px; 
+  margin-bottom: 24px; 
   width: 180px;
   height: 30px;
   padding: 0 2.8rem;
     
 }
+
+.tipo{
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  height: 50px;
+  margin-top: -15px;
+
+}
+
+.tipo0{
+  margin-left: 0px;
+
+}
+.tipo1{
+  margin-left: 90px;
+
+}
+
 
   /* .nome-tipo{
     align-items: center;
