@@ -37,7 +37,7 @@ const Pokedex = () => {
         })
     }
 
-    // console.log()
+   
 
     return (
         <>
