@@ -22,10 +22,8 @@ function Pokemons({ dados }) {
                                         <div className='imagem'>
                                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${e.id}.svg`} alt={e.id} />
                                         </div>
-                                          
-                                        <div className='pokemon-nome'>
-                                            <span className="nome">{e.name}</span>
-                                        </div>
+                                        <span className="nome">{e.name}</span>
+
                                         {
                                             e.types.forEach((poke, index) => {
                                                 if (index == 0) {
@@ -36,11 +34,11 @@ function Pokemons({ dados }) {
                                             })
                                         }
 
-                                        
-                                            <p className='tipo0'>{t0}</p>
-                                            <p className='tipo1'>{t1}</p>
-                                      
-                                        
+
+                                        <p className='tipo0'>{t0}</p>
+                                        <p className='tipo1'>{t1}</p>
+
+
                                         {
                                             e.abilities.forEach((poke, index) => {
                                                 if (index == 0) {
@@ -52,10 +50,10 @@ function Pokemons({ dados }) {
 
                                             })
                                         }
-{/*                                        
+
                                         <p className="habilidade-0">{h0}</p>
-                                        <p className="habilidade-1">{h1}</p> */}
-                                        
+                                        <p className="habilidade-1">{h1}</p>
+
                                     </div >
                                 </div >
                             </>
