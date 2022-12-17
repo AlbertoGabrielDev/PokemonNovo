@@ -62,28 +62,22 @@ img {
   margin-left: 90px;
   font-family: 'Iceberg', cursive;
   color: green;
-  /* height: 10px;
-  width: 20px; */
   margin-top: 0px;
 }
 
 .habilidade-0 {
-  align-items: flex-start;
-  display: flex;
-  width: 100px;
-  height: 50px;
-  margin-top: -140px;
-  margin-left: -200px;
+  margin-left: 15px;
   font-family: 'Iceberg', cursive;
+  margin-top: -180px;
+  height: 30px;
+  width: 90px;
 }
 
 .habilidade-1{
-  align-items: flex-end;
+  margin-top: -180px;
   display: flex;
-  width: 100px;
-  height: 50px;
-  margin-top: -500px;
-  margin-left: 280px;
   font-family: 'Iceberg', cursive;
-  
+  margin-left: 260px;
+  height: 30px;
+  width: 90px;
 }

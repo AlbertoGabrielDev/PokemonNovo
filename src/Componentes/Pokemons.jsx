@@ -19,6 +19,7 @@ function Pokemons({ dados }) {
                             <>
                                 <div className="" key={e.id}>
                                     <div className="card">
+
                                         <div className='imagem'>
                                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${e.id}.svg`} alt={e.id} />
                                         </div>
