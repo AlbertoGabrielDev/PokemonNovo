@@ -65,7 +65,7 @@ img {
   margin-top: 0px;
 }
 
-.habilidade-0 {
+#habilidade-0 {
   margin-left: 15px;
   font-family: 'Iceberg', cursive;
   margin-top: -180px;
@@ -73,7 +73,8 @@ img {
   width: 90px;
 }
 
-.habilidade-1{
+
+#habilidade-1{
   margin-top: -180px;
   display: flex;
   font-family: 'Iceberg', cursive;
