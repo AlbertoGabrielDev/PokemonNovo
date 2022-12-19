@@ -56,9 +56,9 @@ function Pokemons({ dados }) {
                                        <div class='container'>
                                             <p id='habilidade-0'className="habilidade-0">{h0}</p>
                                        </div>
-                                       {/* <div>
+                                       <div>
                                           <p id='habilidade-1' className="habilidade-1">{h1}</p>
-                                       </div> */}
+                                       </div>
 
                                     </div >
                                 </div >

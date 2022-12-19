@@ -42,7 +42,7 @@ img {
   padding-bottom: 10px;
 }
 
- /* Att todo o CSS */
+/* Att todo o CSS */
 .tipo {
   align-items: center;
   display: flex;
@@ -70,15 +70,22 @@ img {
   font-family: 'Iceberg', cursive;
   margin-top: -180px;
   height: 30px;
-  width: 90px;
+  width: 100px;
 }
 
 
-#habilidade-1{
+#habilidade-1 {
   margin-top: -180px;
-  display: flex;
   font-family: 'Iceberg', cursive;
   margin-left: 260px;
   height: 30px;
-  width: 90px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+
+  /* margin-left: 280px;
+  font-family: 'Iceberg', cursive;
+  margin-top: -180px;
+  height: 30px;
+  width: 100px; */
 }
