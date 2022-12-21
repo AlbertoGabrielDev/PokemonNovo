@@ -51,14 +51,14 @@ img {
   padding-bottom: 20px;
 }
 
-.tipo0 {
+#tipo0 {
   margin-left: 95px;
   font-family: 'Iceberg', cursive;
   color: red;
   margin-top: 0px;
 }
 
-.tipo1 {
+#tipo1 {
   margin-left: 90px;
   font-family: 'Iceberg', cursive;
   color: green;
@@ -77,11 +77,11 @@ img {
 #habilidade-1 {
   margin-top: -180px;
   font-family: 'Iceberg', cursive;
-  margin-left: 260px;
+  margin-left: 245px;
   height: 30px;
   width: 100px;
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
 
   /* margin-left: 280px;
   font-family: 'Iceberg', cursive;

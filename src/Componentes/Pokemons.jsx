@@ -36,8 +36,8 @@ function Pokemons({ dados }) {
                                         }
 
 
-                                        <p className='tipo0'>{t0}</p>
-                                        <p className='tipo1'>{t1}</p>
+                                        <p className='' id='tipo0'>{t0}</p>
+                                        <p className='' id='tipo1'>{t1}</p>
 
 
                                         {
