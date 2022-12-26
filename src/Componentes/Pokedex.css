@@ -52,17 +52,26 @@ img {
 }
 
 #tipo0 {
-  margin-left: 95px;
+  
+  /* margin-left: 155px; */
   font-family: 'Iceberg', cursive;
   color: red;
   margin-top: 0px;
 }
 
 #tipo1 {
-  margin-left: 90px;
+  
+  /* margin-left: 90px; */
   font-family: 'Iceberg', cursive;
   color: green;
   margin-top: 0px;
+}
+
+.classe{
+  height: 50px;
+  width: 360px;
+  display: flex;
+  justify-content: space-around;
 }
 
 #habilidade-0 {
@@ -71,6 +80,7 @@ img {
   margin-top: -180px;
   height: 30px;
   width: 100px;
+  
 }
 
 

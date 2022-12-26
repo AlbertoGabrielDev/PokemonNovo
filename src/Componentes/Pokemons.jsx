@@ -10,6 +10,7 @@ function Pokemons({ dados }) {
 
     var t0 = "";
     var t1 = "";
+
     return (
         <>
             <div className="all">
@@ -29,15 +30,21 @@ function Pokemons({ dados }) {
                                             e.types.forEach((poke, index) => {
                                                 if (index == 0) {
                                                     t0 = poke.type.name;
+
+
                                                 } if (index == 1) {
                                                     t1 = poke.type.name
                                                 }
                                             })
                                         }
+                                        {/* Tentar fazer um if else no foreach com o css */}
 
+                                        <div className='classe'>
+                                            <p className='' id='tipo0'>{t0}</p>
+                                            <p className='' id='tipo1'>{t1}</p>
+                                           
+                                        </div>
 
-                                        <p className='' id='tipo0'>{t0}</p>
-                                        <p className='' id='tipo1'>{t1}</p>
 
 
                                         {
@@ -52,13 +59,13 @@ function Pokemons({ dados }) {
                                             })
                                         }
 
-    
-                                       <div class='container'>
-                                            <p id='habilidade-0'className="habilidade-0">{h0}</p>
-                                       </div>
-                                       <div>
-                                          <p id='habilidade-1' className="habilidade-1">{h1}</p>
-                                       </div>
+
+                                        <div class='container'>
+                                            <p id='habilidade-0' className="habilidade-0">{h0}</p>
+                                        </div>
+                                        <div>
+                                            <p id='habilidade-1' className="habilidade-1">{h1}</p>
+                                        </div>
 
                                     </div >
                                 </div >
