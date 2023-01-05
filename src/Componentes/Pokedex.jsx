@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
+import Atributos from "./Atributos";
 import Pokemons from "./Pokemons";
 
 const Pokedex = () => {
@@ -31,19 +32,23 @@ const Pokedex = () => {
             setPokemon(e => {
                 e = [...e, result.data]
                 return e;
-               
+
             })
             // console.log(result.data.abilities)
         })
     }
 
-   
+
 
     return (
         <>
 
             <Pokemons
                 dados={pokemon}
+            />
+
+            <Atributos
+                habilidades={pokemon}
             />
 
             <div className="botao_anterior">

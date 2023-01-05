@@ -37,7 +37,7 @@ function Pokemons({ dados }) {
                                                 }
                                             })
                                         }
-                                        {/* Tentar fazer um if else no foreach com o css */}
+                                     
 
                                         <div className='classe'>
                                             <p className='' id='tipo0'>{t0}</p>
