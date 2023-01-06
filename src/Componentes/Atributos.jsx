@@ -1,5 +1,5 @@
 import axios from 'axios';
-import './Pokedex.css';
+import './Atributos.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
@@ -7,23 +7,25 @@ function Atributos({habilidades}){
    
     return(
         <>
-        <p>nha</p>
             {
                 habilidades.map((a)=>{
                     
                     return(
                         <>
-                           {
+                       <div className='card-habilidade'>
+                         {
                             a.stats.map((habi)=>{
                                return(
                                    <>
-                                   <p className='habi'>{ habi.stat.name}</p>
+                                   <p className='habi-first'>{ habi.stat.name}</p>
+                                   {/* <p className='habi-second'>{ habi.base_stat}</p> */}
                                 </>
                                ) 
                             })
                             
                            }
-                        </>
+                       </div>
+                       </>
                     )
                 })
             }
