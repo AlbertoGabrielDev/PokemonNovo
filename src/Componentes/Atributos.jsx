@@ -18,8 +18,16 @@ function Atributos({ habilidades }) {
                                     a.stats.map((habi) => {
                                         return (
                                             <>
-                                                <p className='habi'>{habi.stat.name}</p>
-                                                <p className='habi'>{habi.base_stat}</p>
+                                                
+                                               
+                                               <p className='habi'>{habi.stat.name} {habi.base_stat}
+                                               </p>
+                                               
+                        
+                                               <div>
+                                               {/* <p className='habi-numeros'>{habi.base_stat}</p> */}
+                                               </div>
+                                                
                                             </>
                                         )
                                     })
