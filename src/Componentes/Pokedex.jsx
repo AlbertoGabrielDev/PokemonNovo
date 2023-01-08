@@ -24,9 +24,15 @@ const Pokedex = () => {
         setPrevUrl(res.data.previous)
 
     }
+    // const getPokemon = () => {
+    //     axios.get(url).then((result) => setPokemon(e => {
+    //         e = [...e, result.data]
+    //         return e;
 
+    //     }))
+    // }
 
-    const getPokemon = async (res) => {
+    const getPokemon = async (res) => {  
         res.map(async (item) => {
             const result = await axios.get(item.url)
             setPokemon(e => {
@@ -34,7 +40,7 @@ const Pokedex = () => {
                 return e;
 
             })
-            // console.log(result.data.abilities)
+
         })
     }
 
@@ -42,14 +48,14 @@ const Pokedex = () => {
 
     return (
         <>
-{/* 
+
             <Pokemons
                 dados={pokemon}
-            /> */}
-
-            <Atributos
-                habilidades={pokemon}
             />
+
+            {/* <Atributos
+                habilidades={pokemon}
+            /> */}
 
             <div className="botao_anterior">
                 {

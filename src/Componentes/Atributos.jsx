@@ -7,12 +7,13 @@ function Atributos({ habilidades }) {
 
     return (
         <>
-
             {
                 habilidades.map((a) => {
-
+                    
                     return (
                         <>
+                        {/* <p>{a.stats[0].base_stat}</p>    
+                        <p>{a.stats[1].base_stat}</p>     */}
                             <div className='card-habilidade'>
                                 {
                                     a.stats.map((habi) => {
@@ -20,13 +21,14 @@ function Atributos({ habilidades }) {
                                             <>
                                                 
                                                
-                                               <p className='habi'>{habi.stat.name} {habi.base_stat}
+                                               <p className='habi-numeros'>
+                                                {habi.stat.name} {habi.base_stat}
                                                </p>
                                                
                         
-                                               <div>
-                                               {/* <p className='habi-numeros'>{habi.base_stat}</p> */}
-                                               </div>
+                                               {/* <div>
+                                               <p className='habi-numeros'>{habi.base_stat}</p>
+                                               </div> */}
                                                 
                                             </>
                                         )

@@ -13,7 +13,24 @@
   /* grid-template-rows: 20px 50px 1fr 50px;  */
 }
 
-/* .habi-numeros {
- 
+.habi-numeros {
+ height: 20px;
+  position: relative;
+  border: 0px;
+  line-height: 10px;
+  background-color: #eee;
+
+  padding: 5px;
+  width: 100%;
+  max-width: 255px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
+}
+.span {
+    color: #888;
+    font-family: Var(--type-first);
+    z-index: 99;
+    align-self: center;
+    position: relative;
   
-} */
+}
