@@ -20,10 +20,11 @@ function Atributos({ habilidades }) {
                                         return (
                                             <>
                                                 
-                                               
-                                               <p className='habi-numeros'>
-                                                {habi.stat.name} {habi.base_stat}
-                                               </p>
+                                                {/* {habi.stat.name}  */}
+                                               <div className='habi-numeros'>
+                                              
+                                               <span className='cor' size={`${habi.base_stat}px`}></span>
+                                               </div>
                                                
                         
                                                {/* <div>

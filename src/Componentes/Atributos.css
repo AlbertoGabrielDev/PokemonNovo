@@ -14,23 +14,36 @@
 }
 
 .habi-numeros {
- height: 20px;
+  height: 20px;
   position: relative;
   border: 0px;
   line-height: 10px;
   background-color: #eee;
-
   padding: 5px;
   width: 100%;
   max-width: 255px;
   border-radius: 5px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
 }
-.span {
-    color: #888;
-    font-family: Var(--type-first);
-    z-index: 99;
-    align-self: center;
-    position: relative;
-  
+/* span {
+  color: #888;
+  font-family: Var(--type-first);
+  z-index: 99;
+  align-self: center;
+  position: relative;
+} */
+
+.cor{
+  height: 20px;
+  border-radius: 5px;
+  position: absolute;
+  left: 0;
+  display: flex;
+  /* animation: ${(props) => Size(props.size)} forwards; */
+  animation-duration: 1.5s;
+  align-items: center;
+  animation-delay: 0.3s;
+  box-shadow: 1px 0px 2px #7c2300;
+  top: 0;
+  background-color: #ff5959;
 }
