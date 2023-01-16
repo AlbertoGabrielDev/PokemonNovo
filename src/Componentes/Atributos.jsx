@@ -28,7 +28,7 @@ function Atributos({ habilidades }) {
                                         <tr>
                                             <td> HP</td>
 
-                                            <td>
+                                            <td  className='habilidades'>
                                                 <span>{a.stats[0].base_stat}</span>
                                             </td>
                                         </tr>
