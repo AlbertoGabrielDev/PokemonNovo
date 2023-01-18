@@ -28,34 +28,34 @@ function Atributos({ habilidades }) {
                                         <tr>
                                             <td> HP</td>
 
-                                            <td  className='habilidades'>
-                                                <span>{a.stats[0].base_stat}</span>
+                                            <td  className='habilidades' style={{width : `${a}%`}}>
+                                                <span className='porcentagem' >{a.stats[0].base_stat}</span>
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>Attack</td>
-                                            <td>
+                                            <td  className='habilidades'>
                                                 <span>{a.stats[1].base_stat}</span>
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>SP. Attack</td>
-                                            <td>
-                                                <span>{a.stats[2].base_stat}</span>
+                                            <td  className='habilidades'>
+                                                <span >{a.stats[2].base_stat}</span>
                                             </td>
                                         </tr>
                                         <tr>
                                             <td>SP. Defense</td>
-                                            <td>
+                                            <td  className='habilidades'>
                                                 <span>{a.stats[3].base_stat}</span>
                                             </td>
                                         </tr>
 
                                         <tr>
                                             <td>Speed</td>
-                                            <td>
+                                            <td  className='habilidades'>
                                                 <span>{a.stats[4].base_stat}</span>
                                             </td>
                                         </tr>
