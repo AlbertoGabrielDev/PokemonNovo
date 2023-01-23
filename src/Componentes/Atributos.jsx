@@ -2,7 +2,7 @@ import axios from 'axios';
 import './Atributos.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
-// import styled, { keyframes } from "styled-components";
+import Progressbar from './Progress_bar';
 function Atributos({ habilidades }) {
 
 
@@ -17,75 +17,59 @@ function Atributos({ habilidades }) {
 
                     return (
                         <>
-                            {/* <div className='nome-skills'>
+
+                            {/* <div className='nome-skills' usar UL e LI>
 
                             </div> */}
 
                             <div className=''>
                                 <table>
 
-                                    <tbody>
-                                        <tr>
-                                            <td> HP</td>
+                                    <ul>
+                    
+                                        <li className='hp'>
+                                            <span>HP</span>
+                                            <span className=''> {a.stats[0].base_stat}</span>
+                                            <span className='span'><Progressbar bgcolor="black" progress={a.stats[0].base_stat} height={10} /></span>
+                                        </li>
 
-                                            <td  className='habilidades' style={{width : `${a}%`}}>
-                                                <span className='porcentagem' >{a.stats[0].base_stat}</span>
-                                            </td>
-                                        </tr>
 
-                                        <tr>
-                                            <td>Attack</td>
-                                            <td  className='habilidades'>
-                                                <span>{a.stats[1].base_stat}</span>
-                                            </td>
-                                        </tr>
+                                        <li className='attack'>
+                                            <span>Attack</span>
+                                            <span className=''> {a.stats[1].base_stat}</span>
+                                            <span className='span'><Progressbar bgcolor="black" progress={a.stats[1].base_stat} height={10} /></span>
+                                        </li>
 
-                                        <tr>
-                                            <td>SP. Attack</td>
-                                            <td  className='habilidades'>
-                                                <span >{a.stats[2].base_stat}</span>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>SP. Defense</td>
-                                            <td  className='habilidades'>
-                                                <span>{a.stats[3].base_stat}</span>
-                                            </td>
-                                        </tr>
+                                        <li className='defense'>
+                                            <span>Defense</span>
+                                            <span className=''> {a.stats[2].base_stat}</span>
+                                            <span className='span'><Progressbar bgcolor="black" progress={a.stats[2].base_stat} height={10} /></span>
+                                        </li>
 
-                                        <tr>
-                                            <td>Speed</td>
-                                            <td  className='habilidades'>
-                                                <span>{a.stats[4].base_stat}</span>
-                                            </td>
-                                        </tr>
-                                    </tbody>
+                                        <li className='spattack'>
+                                            <span>SP. Attack</span>
+                                            <span> {a.stats[3].base_stat}</span>
+                                            <span className='span'><Progressbar bgcolor="black" progress={a.stats[3].base_stat} height={10} /></span>
+                                        </li>
+
+                                        <li className='spdefense'>
+                                            <span>SP. Defender</span>
+                                            <span> {a.stats[4].base_stat}</span>
+                                            <span className='span'><Progressbar bgcolor="black" progress={a.stats[4].base_stat} height={10} /></span>
+                                        </li>
+
+                                        <li className='speed'>
+                                            <span>Speed</span>
+                                            <span> {a.stats[3].base_stat}</span>
+                                            <span className='span'><Progressbar bgcolor="black" progress={a.stats[5].base_stat} height={10} /></span>
+                                        </li>
+
+                                    </ul>
 
                                 </table>
 
                             </div>
                             <br />
-                            {/* <div className='card-habilidade'>
-                                {
-                                    a.stats.map((habi) => {
-                                        return (
-                                            <>
-
-                                                
-                                                <div className='habi-numeros'>
-                                                    {habi.stat.name}
-                                                    <span className='cor' size={`${habi.base_stat}px`}></span>
-                                                </div>  <p className=''>{habi.base_stat}</p>
-                                              
-                                               
-
-
-                                            </>
-                                        )
-                                    })
-
-                                }
-                            </div> */}
                         </>
                     )
                 })

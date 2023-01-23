@@ -63,3 +63,12 @@
   width: 200px;
   
 }
+
+li{
+  list-style: none;
+}
+
+.span{
+  position: relative;
+  bottom: 65px;
+}

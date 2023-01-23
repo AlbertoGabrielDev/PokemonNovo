@@ -42,13 +42,15 @@ const Pokedex = () => {
     return (
         <>
 
-            {/* <Pokemons
+          
+           <Pokemons
                 dados={pokemon}
-            /> */}
+            />
 
             <Atributos
                 habilidades={pokemon}
             />
+          
 
             <div className="botao_anterior">
                 {
