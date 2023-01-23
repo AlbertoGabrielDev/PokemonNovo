@@ -72,3 +72,18 @@ li{
   position: relative;
   bottom: 65px;
 }
+
+.card2{
+  display: flex;
+}
+
+.stats {
+  display: flex;
+  flex-direction: column;
+}
+
+.hp, .attack, .defense, .spattack, .spdefense, .speed{
+ height: 18px;
+ 
+}
+

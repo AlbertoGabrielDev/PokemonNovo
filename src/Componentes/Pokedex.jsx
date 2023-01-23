@@ -41,11 +41,9 @@ const Pokedex = () => {
 
     return (
         <>
-
-          
-           <Pokemons
+           {/* <Pokemons
                 dados={pokemon}
-            />
+            /> */}
 
             <Atributos
                 habilidades={pokemon}
