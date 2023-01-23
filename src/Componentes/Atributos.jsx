@@ -5,20 +5,14 @@ import { useEffect } from 'react';
 import Progressbar from './Progress_bar';
 function Atributos({ habilidades }) {
 
-
-
     return (
         <>
-
+        <div className=''>
             {
-
-
                 habilidades.map((a) => {
 
                     return (
                         <>
-
-
                             <div className='card2'>
                                 <ul className='name_status'>
                                     <li>HP</li>
@@ -38,13 +32,13 @@ function Atributos({ habilidades }) {
 
 
                                     <li className='attack'>
-                                        <span className=''> {a.stats[1].base_stat}</span>
+                                        <span> {a.stats[1].base_stat}</span>
                                         <span className='span'><Progressbar bgcolor="black" progress={a.stats[1].base_stat} height={10} /></span>
                                     </li>
 
 
                                     <li className='defense'>
-                                        <span className=''> {a.stats[2].base_stat}</span>
+                                        <span> {a.stats[2].base_stat}</span>
                                         <span className='span'><Progressbar bgcolor="black" progress={a.stats[2].base_stat} height={10} /></span>
                                     </li>
 
@@ -62,7 +56,7 @@ function Atributos({ habilidades }) {
 
 
                                     <li className='speed'>
-                                        <span> {a.stats[3].base_stat}</span>
+                                        <span> {a.stats[5].base_stat}</span>
                                         <span className='span'><Progressbar bgcolor="black" progress={a.stats[5].base_stat} height={10} /></span>
                                     </li>
 
@@ -76,7 +70,7 @@ function Atributos({ habilidades }) {
                     )
                 })
             }
-
+</div>
         </>
     )
 }
