@@ -3,17 +3,20 @@ import './Pokedex.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-function Pokemons({ dados }) {
+function Pokemons({ dados,margin }) {
 
     var h0 = "";
     var h1 = "";
 
     var t0 = "";
     var t1 = "";
-
+    const Parentdiv = {
+        
+      }
     return (
         <>
-            <div className="all">
+        <div style={Parentdiv}></div>
+            <div className="">
                 {
                     dados.map((e) => {
                         return (

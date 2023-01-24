@@ -1,7 +1,5 @@
-import axios from 'axios';
+
 import './Atributos.css';
-import { useState } from 'react';
-import { useEffect } from 'react';
 import Progressbar from './Progress_bar';
 function Atributos({ habilidades }) {
 

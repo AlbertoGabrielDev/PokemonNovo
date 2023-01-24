@@ -9,7 +9,6 @@ const Pokedex = () => {
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
 
-
     useEffect(() => {
         pokeFun()
 
@@ -37,19 +36,19 @@ const Pokedex = () => {
         })
     }
 
-
-
     return (
         <>
           
           <div className="columns">
           <Pokemons
-                dados={pokemon}
-            />
+                dados={pokemon} 
+                // top = {10}
+            />  
 
             <Atributos
-                habilidades={pokemon}
-            />
+            habilidades={pokemon}
+        />
+           
           </div>
 
             <div className="botao_anterior">
@@ -71,8 +70,6 @@ const Pokedex = () => {
 
         </>
     )
-
-
 }
 
 export default Pokedex;
