@@ -3,6 +3,8 @@
   display: flex;
   flex-wrap: wrap;
 }
-.nha{
-  background-color: black;
+.poke{
+  position: relative;
+  bottom: 20px;
+
 }

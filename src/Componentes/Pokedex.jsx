@@ -24,7 +24,7 @@ const Pokedex = () => {
 
     }
 
-    const getPokemon = async (res) => {  
+    const getPokemon = async (res) => {
         res.map(async (item) => {
             const result = await axios.get(item.url)
             setPokemon(e => {
@@ -38,18 +38,21 @@ const Pokedex = () => {
 
     return (
         <>
-          
-          <div className="columns">
-          <Pokemons
-                dados={pokemon} 
-                // top = {10}
-            />  
+            <div className="columns">
+                <div className="poke">
+                    <Pokemons dados={pokemon} />
+                </div>
 
-            <Atributos
-            habilidades={pokemon}
-        />
-           
-          </div>
+                <div className="habi">
+                    <Atributos habilidades={pokemon} />
+                </div>
+
+
+
+
+
+
+            </div>
 
             <div className="botao_anterior">
                 {
