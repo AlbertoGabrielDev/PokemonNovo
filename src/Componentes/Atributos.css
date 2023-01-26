@@ -25,7 +25,7 @@
   box-shadow: 0 2px 4px rgb(0 0 0 / 40%);
 }
 
-.cor{
+.cor {
   height: 20px;
   border-radius: 5px;
   position: absolute;
@@ -39,7 +39,7 @@
   background-color: #ff5959;
 }
 
-.progress{
+.progress {
   display: flex;
   height: 1rem;
   overflow: hidden;
@@ -49,21 +49,21 @@
 
 }
 
-.habilidades{
+.habilidades {
   background-color: #e9ecef;
   width: 200px;
 }
 
-li{
+li {
   list-style: none;
 }
 
-.span{
+.span {
   position: relative;
   bottom: 65px;
 }
 
-.card2{
+.card2 {
   display: flex;
   flex-wrap: wrap;
   margin: 1px;
@@ -72,15 +72,31 @@ li{
   height: 240px;
   border-radius: 10px;
   background-color: transparent;
+  justify-content: flex-end;
+  align-content: center;
+  
+  font-size: 20px;
 }
+
 .stats {
   display: flex;
   flex-direction: column;
   width: 150px;
-}
-.hp, .attack, .defense, .spattack, .spdefense, .speed{
- height: 18px;
  
+  
+}
+
+.hp,
+.attack,
+.defense,
+.spattack,
+.spdefense,
+.speed {
+  height: 18px;
+  padding: 6px;
 }
 
 
+.name_status{
+line-height: 1.5em;
+}
