@@ -25,7 +25,9 @@ function Atributos({ habilidades }) {
 
                                     <li className='hp'>
                                         <span className='base_stat'> {a.stats[0].base_stat}</span>
-                                        <span className='span'><Progressbar bgcolor="black" progress={a.stats[0].base_stat} height={10} /></span>
+                                        <span className='span'>
+                                            <Progressbar bgcolor="black" progress={a.stats[0].base_stat} height={10} />
+                                        </span>
                                     </li>
 
 
