@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react"
 import Atributos from "./Atributos";
 import Pokemons from "./Pokemons";
+import Example from "./Exemple";
 
 const Pokedex = () => {
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
@@ -38,7 +39,7 @@ const Pokedex = () => {
 
     return (
         <>
-            <div className="columns">
+            {/* <div className="columns">
                 <div className="poke">
                     <Pokemons dados={pokemon} />
                 </div>
@@ -47,12 +48,9 @@ const Pokedex = () => {
                     <Atributos habilidades={pokemon} />
                 </div>
 
+            </div> */}
 
-
-
-
-
-            </div>
+            <Example/>
 
             <div className="botao_anterior">
                 {
