@@ -16,12 +16,12 @@ const Pokedex = () => {
     }, [url])
 
     const pokeFun = async () => { // poderia usar callback?
-        const res = await axios.get(url)
+        const rest = await axios.get(url)
         // console.log(res.data.results)
 
-        getPokemon(res.data.results)
-        setNextUrl(res.data.next)
-        setPrevUrl(res.data.previous)
+        getPokemon(rest.data.results)
+        setNextUrl(rest.data.next)
+        setPrevUrl(rest.data.previous)
 
     }
 
@@ -33,7 +33,6 @@ const Pokedex = () => {
                 return e;
 
             })
-
         })
     }
 
