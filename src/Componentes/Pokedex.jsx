@@ -41,11 +41,11 @@ const Pokedex = () => {
         <>
             {/* <div className="columns">
                 <div className="poke">
-                    <Pokemons dados={pokemon} />
+                    <Pokemons dados={pokemon}/>
                 </div>
 
                 <div className="habi">
-                    <Atributos habilidades={pokemon} />
+                    <Atributos habilidades={pokemon}/>
                 </div>
 
             </div> */}

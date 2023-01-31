@@ -1,42 +1,31 @@
-import React, { useContext } from 'react';
-import { useRef } from 'react';
+import axios from "axios";
 import { useEffect } from 'react';
 import { useState } from 'react';
 function App() {
 
-  const [count, setCount] = useState(0);
-  const [number, setNumber] = useState(0);
-
-  const numberRef= useRef(0);
-
-  const buttonRef = useRef();
-
-  const oldCountRef = useRef();
-
-  console.log("Renderizou")
+  const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/");
+  const [type, setType] = useState([]);
 
   useEffect(()=>{
-    numberRef.current = Math.random()
-    // setNumber((prevNumber) => prevNumber )
-  })
+    get()
+  },[url])
 
-  useEffect(()=>{
-    console.log(buttonRef.current.click());
-  },[])
+  const get =async() =>{
+     const res = await axios.get(url)
+    // getTypes(res.data.results)
+    console.log(res.data.results[1].url)
+  }
 
-useEffect(()=>{
-  oldCountRef.current = count;
-},[count])
-
-  return(
-    <div className='App'>
-      <h1> O number é: {number}</h1>
-      <h1>O contador e : {count}</h1>
-      <h1>UseRef : {numberRef.current}</h1>
-    <h2>O contador anterior e : {oldCountRef.current} </h2>
-      <button ref={buttonRef} onClick={() => setCount((prevCount) => prevCount +1)}>Add</button>
-    </div>
-  )
+  const getTypes = async(t) =>{
+  //  t.map(async(rest)=>{
+  //   const result = await axios.get(rest.url)
+  //   setType((e)=>{
+  //     e= [...e, result.data]
+  //     return e;
+  //   })
+  //   console.log(result)
+  //  })
+   }
 }
 
 export default App;

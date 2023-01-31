@@ -1,2 +1,3 @@
 -Fazer melhorias no codigo na parte dos atributos, tentar simplificar os arrays dos stats
 -Usar UseContext no projeto
+-Usar UseRef 
