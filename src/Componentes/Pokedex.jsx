@@ -38,7 +38,7 @@ const Pokedex = () => {
 
     return (
         <>
-            <div className="columns">
+            {/* <div className="columns">
                 <div className="poke">
                     <Pokemons dados={pokemon}/>
                 </div>
@@ -47,9 +47,9 @@ const Pokedex = () => {
                     <Atributos habilidades={pokemon}/>
                 </div>
 
-            </div>
+            </div> */}
 
-            {/* <Example/> */}
+            <Example/>
 
             <div className="botao_anterior">
                 {
