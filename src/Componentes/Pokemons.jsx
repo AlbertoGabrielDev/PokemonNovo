@@ -15,7 +15,7 @@ function Pokemons({ dados }) {
       }
     return (
         <>
-        <div style={Parentdiv}></div>
+       
             <div className="">
                 {
                     dados.map((e) => {
