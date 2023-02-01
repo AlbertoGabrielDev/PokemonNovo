@@ -3,35 +3,80 @@ import axios from "axios";
 import { useEffect } from 'react';
 import { useState } from 'react';
 function App() {
-  const [url, setUrl] = useState("https://pokeapi.co/api/v2/type");
   const [types, setTypes] = useState([]);
-
+  const [selectedType, setSelectedType] = useState(null);
+  const [pokemonList, setPokemonList] = useState([]);
 
   useEffect(() => {
-    getType()
-  }, [])
+    async function fetchTypes() {
+      const response = await fetch('https://pokeapi.co/api/v2/type');
+      const data = await response.json();
+      setTypes(data.results);
+    }
 
-  const getType = async () => {
-    const rest = await fetch(url)
-    const data = await rest.json();
-    setTypes(data.results);
-    console.log(data.results)
-  }
+    fetchTypes();
+  }, []);
+
+  useEffect(() => {
+    async function fetchPokemonList() {
+      if (!selectedType) {
+        return;
+      }
+
+      const response = await fetch(`${selectedType.url}`);
+      const data = await response.json();
+      setPokemonList(data.pokemon);
+    }
+
+    fetchPokemonList();
+  }, [selectedType]);
 
   return (
-    <>
-      <h1>Tipos de Pokemons</h1>
+    <div>
+      <h1>Pokemons por tipo</h1>
+      <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
+        <option value="">Selecione um tipo</option>
+        {types.map(type => (
+          <option key={type.name} value={type.name}>
+            {type.name}
+          </option>
+        ))}
+      </select>
+      {pokemonList.map(pokemon => (
+        <PokemonInfo key={pokemon.pokemon.name} pokemon={pokemon.pokemon} />
+      ))}
+    </div>
+  );
+}
+
+function PokemonInfo({ pokemon }) {
+  const [info, setInfo] = useState({});
+
+  useEffect(() => {
+    async function fetchInfo() {
+      const response = await fetch(pokemon.url);
+      const data = await response.json();
+      setInfo(data);
+    }
+
+    fetchInfo();
+  }, [pokemon]);
+
+  return (
+    <div>
+      <h2>{pokemon.name}</h2>
       <ul>
-
-        {
-          types.map(type => (
-            <li key={type.name}>{type.name}</li>
-          ))
-        }
-
+        <li><strong>Peso:</strong> {info.weight}</li>
+        <li><strong>Habilidades:</strong>
+          <ul>
+            {info.abilities.map(ability => (
+              <li key={ability.ability.name}>{ability.ability.name}</li>
+            ))}
+          </ul>
+        </li>
       </ul>
-    </>
-  )
+    </div>
+  );
 
 }
 
