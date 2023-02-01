@@ -1,3 +1,4 @@
 -Fazer melhorias no codigo na parte dos atributos, tentar simplificar os arrays dos stats
 -Usar UseContext no projeto
 -Usar UseRef 
+-Fazer melhorias na parte dos maps, fazer a função ler em JSON
