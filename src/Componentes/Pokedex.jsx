@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import Atributos from "./Atributos";
 import Pokemons from "./Pokemons";
 import Example from "./Exemple";
+import Type from "./Type";
 
 const Pokedex = () => {
     const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
@@ -49,7 +50,10 @@ const Pokedex = () => {
 
             </div> */}
 
-            <Example/>
+            {/* <Example/> */}
+            
+            <Type/>
+
 
             <div className="botao_anterior">
                 {

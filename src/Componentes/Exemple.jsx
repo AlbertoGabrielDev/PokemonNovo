@@ -1,4 +1,4 @@
-import { type } from "@testing-library/user-event/dist/type";
+
 import axios from "axios";
 import { useEffect } from 'react';
 import { useState } from 'react';
@@ -6,19 +6,20 @@ function App() {
 
   
   const [types, setTypes] = useState([]);
-  const [selectedType, setSelectedType] = useState(null);
+  const [selectedType, setSelectedType] = useState(null); //armazena o nome dos tipo de pokemons
   const [pokemonList, setPokemonList] = useState([]);
-
+ 
   useEffect(() => {
     async function fetchTypes() {
       const response = await fetch('https://pokeapi.co/api/v2/type');
       const data = await response.json();
       setTypes(data.results);
-    }
+     
+    } 
 
     fetchTypes();
   }, []);
-
+  
   useEffect(() => {
     async function fetchPokemonList() {
       if (!selectedType) {
@@ -28,6 +29,7 @@ function App() {
       const response = await fetch(`${selectedType.url}`);
       const data = await response.json();
       setPokemonList(data.pokemon);
+     
     }
 
     fetchPokemonList();
@@ -59,10 +61,13 @@ function PokemonInfo({ pokemon }) {
       const response = await fetch(pokemon.url);
       const data = await response.json();
       setInfo(data);
+      
     }
 
     fetchInfo();
+
   }, [pokemon]);
+  
 
   return (
     <div>
