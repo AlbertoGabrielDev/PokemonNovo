@@ -3,6 +3,8 @@ import axios from "axios";
 import { useEffect } from 'react';
 import { useState } from 'react';
 function App() {
+
+  
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
   const [pokemonList, setPokemonList] = useState([]);
@@ -34,15 +36,15 @@ function App() {
   return (
     <div>
       <h1>Pokemons por tipo</h1>
-      <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
+      <select onChange={e => setSelectedType(types.find(tipo => tipo.name === e.target.value))}>
         <option value="">Selecione um tipo</option>
-        {types.map(type => (
-          <option key={type.name} value={type.name}>
-            {type.name}
+        {types.map(tipo => (
+          <option key={tipo.name} value={tipo.name}>
+            {tipo.name}
           </option>
         ))}
       </select>
-      {pokemonList.map(pokemon => (
+      {pokemonList.map(pokemon => ( //Isso traz os poke quando seleciono um tipo 
         <PokemonInfo key={pokemon.pokemon.name} pokemon={pokemon.pokemon} />
       ))}
     </div>
@@ -69,7 +71,7 @@ function PokemonInfo({ pokemon }) {
         <li><strong>Peso:</strong> {info.weight}</li>
         <li><strong>Habilidades:</strong>
           <ul>
-            {info.abilities.map(ability => (
+            {info.abilities && info.abilities.map(ability => (
               <li key={ability.ability.name}>{ability.ability.name}</li>
             ))}
           </ul>
@@ -77,7 +79,6 @@ function PokemonInfo({ pokemon }) {
       </ul>
     </div>
   );
-
 }
 
 export default App;
