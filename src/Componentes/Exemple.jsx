@@ -46,9 +46,9 @@ function App() {
           </option>
         ))}
       </select>
-      {pokemonList.map(pokemon => ( //Isso traz os poke quando seleciono um tipo 
+      {/* {pokemonList.map(pokemon => ( //Isso traz os poke quando seleciono um tipo 
         <PokemonInfo key={pokemon.pokemon.name} pokemon={pokemon.pokemon} />
-      ))}
+      ))} */}
     </div>
   );
 }
