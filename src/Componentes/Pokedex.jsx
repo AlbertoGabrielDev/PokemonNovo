@@ -50,9 +50,9 @@ const Pokedex = () => {
 
             </div> */}
 
-            {/* <Example/> */}
+            <Example/>
             
-            <Type/>
+            {/* <Type/> */}
 
 
             <div className="botao_anterior">
