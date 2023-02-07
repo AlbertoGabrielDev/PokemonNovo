@@ -36,7 +36,7 @@ const App = () => {
       {pokemons
         .filter((pokemon) => selectedType === '' || pokemon.type === selectedType)
         .map((pokemon, index) => (
-          <PokemonCard key={index} info={pokemon} />  //info pega a função de cima, que traz os dados
+          <PokemonCard key={index} info={pokemon} />
         ))}
     </div>
   );

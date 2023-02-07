@@ -20,8 +20,6 @@ function Type() {
         console.log(data.results)
     }
 
-    
-
     return (
         <>
             <h1>Tipos</h1>
@@ -43,7 +41,5 @@ function Type() {
         </>
     )
 }
-
-
 
 export default Type;
