@@ -1,45 +1,80 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
-const PokemonCard = ({ info }) => {
+function Example() {
+  const [types, setTypes] = useState([]);
+  const [selectedType, setSelectedType] = useState(null);
+  const [pokemonList, setPokemonList] = useState([]);
+
+  useEffect(() => {
+    async function fetchTypes() {
+      const response = await fetch('https://pokeapi.co/api/v2/type');
+      const data = await response.json();
+      setTypes(data.results);
+    }
+
+    fetchTypes();
+  }, []);
+
+  useEffect(() => {
+    async function fetchPokemonList() {
+      if (!selectedType) {
+        return;
+      }
+
+      const response = await fetch(`${selectedType.url}`);
+      const data = await response.json();
+      setPokemonList(data.pokemon);
+    }
+
+    fetchPokemonList();
+  }, [selectedType]);
+
   return (
     <div>
-      <h2>{info.name}</h2>
-      <p>Weight: {info.weight}</p>
-      <p>Abilities:</p>
-      <ul>
-        {info.abilities && info.abilities.map((ability, index) => (
-          <li key={index}>{ability.ability.name}</li>
-        ))}
-      </ul>
-    </div>
-  );
-};
-
-const App = () => {
-  const [selectedType, setSelectedType] = useState('');
-  const [pokemons, setPokemons] = useState([]);
-
-  const handleTypeChange = (event) => {
-    setSelectedType(event.target.value);
-  };
-
-  return (
-    <div>
-      <select value={selectedType} onChange={handleTypeChange}>
-        <option value="">All</option>
-        {pokemons.map((pokemon, index) => (
-          <option key={index} value={pokemon.type}>
-            {pokemon.type}
+      <h1>Pokemons por tipo</h1>
+      <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
+        <option value="">Selecione um tipo</option>
+        {types.map(type => (
+          <option key={type.name} value={type.name}>
+            {type.name}
           </option>
         ))}
       </select>
-      {pokemons
-        .filter((pokemon) => selectedType === '' || pokemon.type === selectedType)
-        .map((pokemon, index) => (
-          <PokemonCard key={index} info={pokemon} />
-        ))}
+      {pokemonList.map(pokemon => (
+        <PokemonInfo key={pokemon.pokemon.name} pokemon={pokemon.pokemon} />
+      ))}
     </div>
   );
-};
+}
 
-export default App;
+function PokemonInfo({ pokemon }) {
+  const [info, setInfo] = useState({});
+
+  useEffect(() => {
+    async function fetchInfo() {
+      const response = await fetch(pokemon.url);
+      const data = await response.json();
+      setInfo(data);
+    }
+
+    fetchInfo();
+  }, [pokemon]);
+
+  return (
+    <div>
+      <h2>{pokemon.name}</h2>
+      <ul>
+        <li><strong>Peso:</strong> {info.weight}</li>
+        <li><strong>Habilidades:</strong>
+          <ul>
+            {info.abilities && info.abilities.map(ability => (
+              <li key={ability.ability.name}>{ability.ability.name}</li>
+            ))}
+          </ul>
+        </li>
+      </ul>
+    </div>
+  );
+}
+
+export default Example;
