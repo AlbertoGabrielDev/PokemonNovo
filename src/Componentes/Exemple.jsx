@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import Pokemons from './Pokemons';
 
 function Example() {
   const [types, setTypes] = useState([]);
@@ -40,8 +41,8 @@ function Example() {
           </option>
         ))}
       </select>
-      {pokemonList.map(pokemon => (
-        <PokemonInfo key={pokemon.pokemon.name} pokemon={pokemon.pokemon} />
+      {pokemonList.map(poke => (
+       <Pokemons dados={poke}/> //talvez o erro esteja no fato do pokemonList n trazer direto da url
       ))}
     </div>
   );
