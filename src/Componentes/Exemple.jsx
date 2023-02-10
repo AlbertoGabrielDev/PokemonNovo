@@ -9,7 +9,7 @@ function Example() {
   
   useEffect(() => {
     async function fetchTypes() {
-      const response = await fetch('https://pokeapi.co/api/v2/type');
+      const response = await fetch('https://pokeapi.co/api/v2/type'); //Tirar esse trecho e usar o que foi feito na linha 26
       const data = await response.json();
       setTypes(data.results);
     }
@@ -34,7 +34,6 @@ function Example() {
 
   return (
     <div>
-      
       <h1>Pokemons por tipo</h1>
       <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
         <option value="">Selecione um tipo</option>
@@ -44,11 +43,12 @@ function Example() {
           </option>
         ))}
       </select>
-      {pokemonList.map(poke => (
-       <PokemonInfo pokemons={poke.pokemon}/>
+      {pokemonList.map(pokes => (
+        // <Pokemons dados={pokes.pokemon}/>
+        <PokemonInfo pokemons={pokes.pokemon}/>
         //talvez o erro esteja no fato do pokemonList n trazer direto da url
       ))}
-      
+
     </div>
   );
 }
@@ -61,6 +61,7 @@ function PokemonInfo({ pokemons }) {
       const response = await fetch(pokemons.url);
       const data = await response.json();
       setInfo(data);
+      console.log(pokemons)
     }
 
     fetchInfo();

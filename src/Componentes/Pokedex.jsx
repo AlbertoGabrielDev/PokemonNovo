@@ -6,7 +6,7 @@ import Example from "./Exemple";
 import Type from "./Type";
 
 const Pokedex = () => {
-    const [url, setUrl] = useState("https://pokeapi.co/api/v2/pokemon/")
+    const [url, setUrl] = useState(`https://pokeapi.co/api/v2/pokemon/`)
     const [pokemon, setPokemon] = useState([])
     const [nextUrl, setNextUrl] = useState();
     const [prevUrl, setPrevUrl] = useState();
@@ -39,7 +39,7 @@ const Pokedex = () => {
 
     return (
         <>
-            {/* <div className="columns">
+            <div className="columns">
                 <div className="poke">
                     <Pokemons dados={pokemon}/>
                 </div>
@@ -48,9 +48,9 @@ const Pokedex = () => {
                     <Atributos habilidades={pokemon}/>
                 </div>
 
-            </div> */}
+            </div>
 
-            <Example/>
+            {/* <Example /> */}
             
             {/* <Type/> */}
 

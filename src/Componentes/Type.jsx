@@ -43,8 +43,8 @@ function Type() {
                     })}             
             </select>
 
-          {pokemonList.map((poke) =>{
-            <PokemonInfo key={poke.pokemon.name} pokemon={poke.pokemon}/>
+          {pokemonList.map((pokes) =>{
+            <PokemonInfo key={pokes.pokemon.name} pokemon={pokes.pokemon}/>
           })}  
         </>
     )
