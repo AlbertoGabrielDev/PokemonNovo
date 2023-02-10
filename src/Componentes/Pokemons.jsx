@@ -3,7 +3,7 @@ import './Pokedex.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
-function Pokemons({ dados, typePokemon }) {
+function Pokemons({ dados }) {
 
     var h0 = "";
     var h1 = "";

@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Pokemons from './Pokemons';
 
+
 function Example() {
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
   const [pokemonList, setPokemonList] = useState([]);
-
+  
   useEffect(() => {
     async function fetchTypes() {
       const response = await fetch('https://pokeapi.co/api/v2/type');
@@ -25,13 +26,15 @@ function Example() {
       const response = await fetch(`${selectedType.url}`);
       const data = await response.json();
       setPokemonList(data.pokemon);
+      
+      console.log(selectedType.url)
     }
-
     fetchPokemonList();
   }, [selectedType]);
 
   return (
     <div>
+      
       <h1>Pokemons por tipo</h1>
       <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
         <option value="">Selecione um tipo</option>
@@ -42,28 +45,31 @@ function Example() {
         ))}
       </select>
       {pokemonList.map(poke => (
-       <Pokemons dados={poke}/> //talvez o erro esteja no fato do pokemonList n trazer direto da url
+       <PokemonInfo pokemons={poke.pokemon}/>
+        //talvez o erro esteja no fato do pokemonList n trazer direto da url
       ))}
+      
     </div>
   );
 }
 
-function PokemonInfo({ pokemon }) {
+function PokemonInfo({ pokemons }) {
   const [info, setInfo] = useState({});
 
   useEffect(() => {
     async function fetchInfo() {
-      const response = await fetch(pokemon.url);
+      const response = await fetch(pokemons.url);
       const data = await response.json();
       setInfo(data);
     }
 
     fetchInfo();
-  }, [pokemon]);
+  }, [pokemons]);
 
   return (
     <div>
-      <h2>{pokemon.name}</h2>
+      <h2>{pokemons.name}</h2>
+      
       <ul>
         <li><strong>Peso:</strong> {info.weight}</li>
         <li><strong>Habilidades:</strong>
