@@ -50,7 +50,7 @@ const Pokedex = () => {
 
             </div>
 
-            {/* <Example /> */}
+            <Example />
             
             {/* <Type/> */}
 

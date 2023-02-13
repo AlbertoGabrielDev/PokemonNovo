@@ -21,9 +21,11 @@ function Type() {
         const response = await fetch(url);
         const data = await response.json();
         setTypes(data.results);
+        
        // console.log(data.results)
         
     }
+    var tipoPokemon = types
 
     return (
         <>
@@ -61,7 +63,7 @@ function PokemonInfo({ pokemon }) {
   
       fetchInfo();
     }, [pokemon]);
-  
+  //Eu preciso de alguma conexao com o componente Pokemons, como tem o exemplo do chance
     return (
       <div>
         <h2>{pokemon.name}</h2>

@@ -3,6 +3,7 @@ import './Pokedex.css';
 import { useState } from 'react';
 import { useEffect } from 'react';
 
+
 function Pokemons({ dados }) {
 
     var h0 = "";
@@ -10,20 +11,16 @@ function Pokemons({ dados }) {
 
     var t0 = "";
     var t1 = "";
-    const Parentdiv = {
-        
-      }
+   
     return (
         <>
-       
             <div className="">
                 {
-                    dados.map((e) => {
+                  dados && dados.map((e) => {
                         return (
                             <>
                                 <div className="" key={e.id}>
                                     <div className="card">
-
                                         <div className='imagem'>
                                             <img src={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${e.id}.svg`} alt={e.id} />
                                         </div>
@@ -40,15 +37,12 @@ function Pokemons({ dados }) {
                                                 }
                                             })
                                         }
-                                     
 
                                         <div className='classe'>
                                             <p className='' id='tipo0'>{t0}</p>
                                             <p className='' id='tipo1'>{t1}</p>
                                            
                                         </div>
-
-
 
                                         {
                                             e.abilities.forEach((poke, index) => {
@@ -61,7 +55,6 @@ function Pokemons({ dados }) {
 
                                             })
                                         }
-
 
                                         <div class='container'>
                                             <p id='habilidade-0' className="habilidade-0">{h0}</p>

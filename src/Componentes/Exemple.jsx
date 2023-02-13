@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Pokemons from './Pokemons';
 
 
-function Example() {
+function Example({tipoPokemon}) {
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
   const [pokemonList, setPokemonList] = useState([]);
-  
+
   useEffect(() => {
     async function fetchTypes() {
       const response = await fetch('https://pokeapi.co/api/v2/type'); //Tirar esse trecho e usar o que foi feito na linha 26
@@ -26,29 +26,28 @@ function Example() {
       const response = await fetch(`${selectedType.url}`);
       const data = await response.json();
       setPokemonList(data.pokemon);
-      
-      console.log(selectedType.url)
+
+      // console.log(selectedType.url)
     }
     fetchPokemonList();
   }, [selectedType]);
-
+  var tipoPokemon = types
   return (
     <div>
       <h1>Pokemons por tipo</h1>
       <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
         <option value="">Selecione um tipo</option>
-        {types.map(type => (
+        {tipoPokemon.map(type => (
           <option key={type.name} value={type.name}>
             {type.name}
           </option>
         ))}
       </select>
       {pokemonList.map(pokes => (
-        // <Pokemons dados={pokes.pokemon}/>
-        <PokemonInfo pokemons={pokes.pokemon}/>
-        //talvez o erro esteja no fato do pokemonList n trazer direto da url
+        //  <Pokemons dados={pokes.pokemon}/>
+         <PokemonInfo pokemons={pokes.pokemon} />
+  
       ))}
-
     </div>
   );
 }
@@ -61,16 +60,16 @@ function PokemonInfo({ pokemons }) {
       const response = await fetch(pokemons.url);
       const data = await response.json();
       setInfo(data);
-      console.log(pokemons)
+      console.log(info)
     }
 
     fetchInfo();
   }, [pokemons]);
 
+  //nova tentativa, colocar tudo isso dentro de Pokemons 
   return (
     <div>
       <h2>{pokemons.name}</h2>
-      
       <ul>
         <li><strong>Peso:</strong> {info.weight}</li>
         <li><strong>Habilidades:</strong>
@@ -86,3 +85,9 @@ function PokemonInfo({ pokemons }) {
 }
 
 export default Example;
+
+
+
+
+
+
