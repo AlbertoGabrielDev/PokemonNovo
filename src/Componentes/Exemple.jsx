@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Pokemons from './Pokemons';
 
 
-function Example({tipoPokemon}) {
+function Example() {
   const [types, setTypes] = useState([]);
   const [selectedType, setSelectedType] = useState(null);
   const [pokemonList, setPokemonList] = useState([]);
@@ -31,20 +31,22 @@ function Example({tipoPokemon}) {
     }
     fetchPokemonList();
   }, [selectedType]);
-  var tipoPokemon = types
+
+  // var tipoPokemon = types
+
   return (
     <div>
       <h1>Pokemons por tipo</h1>
       <select onChange={e => setSelectedType(types.find(type => type.name === e.target.value))}>
         <option value="">Selecione um tipo</option>
-        {tipoPokemon.map(type => (
+        {types.map(type => (
           <option key={type.name} value={type.name}>
             {type.name}
           </option>
         ))}
       </select>
       {pokemonList.map(pokes => (
-        //  <Pokemons dados={pokes.pokemon}/>
+        //  <Pokemons dados={pokes.pokemon}/> //Essa parte tras os pokemons
          <PokemonInfo pokemons={pokes.pokemon} />
   
       ))}
